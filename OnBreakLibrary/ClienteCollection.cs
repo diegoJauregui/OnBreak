@@ -9,7 +9,7 @@ namespace OnBreakLibrary
 {
     public class ClienteCollection
     {
-        private onbreakEntities db = new onbreakEntities();
+        private OnBreakEntities db = new OnBreakEntities();
 
         private List<Cliente> _clientes = new List<Cliente>();
 
@@ -42,17 +42,17 @@ namespace OnBreakLibrary
             try
             {
                 return (from c in this.db.Cliente
-                        where c.Rut == rut
+                        where c.RutCliente == rut
                         select new Cliente()
                         {
-                            Rut = c.Rut,
-                            Nombre = c.Nombre,
+                            Rut = c.RutCliente,
+                            Nombre = c.NombreContacto,
                             RazonSocial = c.RazonSocial,
-                            Correo = c.Correo,
+                            Correo = c.MailContacto,
                             Direccion = c.Direccion,
                             Telefono = c.Telefono,
-                            ActividadEmpresaId = (int)c.ActividadEmpresaId,
-                            TipoEmpresaId = (int)c.TipoEmpresaId
+                            ActividadEmpresaId = c.IdActividadEmpresa,
+                            TipoEmpresaId = c.IdTipoEmpresa
                         }).First();
             }
             catch (Exception)
@@ -123,25 +123,25 @@ namespace OnBreakLibrary
             return (from c in db.Cliente
                     select new Cliente()
                     {
-                        Rut = c.Rut,
-                        Nombre = c.Nombre,
+                        Rut = c.RutCliente,
+                        Nombre = c.NombreContacto,
                         RazonSocial = c.RazonSocial,
-                        Correo = c.Correo,
+                        Correo = c.MailContacto,
                         Direccion = c.Direccion,
                         Telefono = c.Telefono,
                         ActividadEmpresas = new ActividadEmpresas()
                         {
-                            Id = c.ActividadEmpresa.Id,
+                            Id = c.IdActividadEmpresa,
                             Descripcion = c.ActividadEmpresa.Descripcion
                         }
 ,
-                        ActividadEmpresaId = (int)c.ActividadEmpresaId,
+                        ActividadEmpresaId = c.IdActividadEmpresa,
                         TipoEmpresas = new TipoEmpresas()
                         {
-                            Id = c.TipoEmpresa.Id,
+                            Id = c.IdTipoEmpresa,
                             Descripcion = c.TipoEmpresa.Descripcion
                         },
-                        TipoEmpresaId = (int)c.TipoEmpresaId
+                        TipoEmpresaId = c.IdTipoEmpresa
                     }).ToList();
         }
 

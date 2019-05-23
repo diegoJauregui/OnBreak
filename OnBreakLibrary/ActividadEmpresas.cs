@@ -11,6 +11,11 @@ namespace OnBreakLibrary
         private int _id;
         private string _descripcion;
 
+        public ActividadEmpresas()
+        {
+
+        }
+
         public int Id
         {
             get
