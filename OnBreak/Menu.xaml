@@ -1,0 +1,34 @@
+﻿<Controls:MetroWindow x:Class="OnBreak.Menu"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"            
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OnBreak"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"             
+        mc:Ignorable="d"
+        Title="Menu" Height="400" Width="600" Closing="MetroWindow_Closing">
+    <Grid>
+        <Controls:Tile Title="G.Clientes" Margin="26,20,431,210" Click="Tile_Click" Height="Auto" Width="Auto">
+            <iconPacks:PackIconMaterial Kind="Account" VerticalAlignment="Center" HorizontalAlignment="Center" Height="65" Width="78" />
+        </Controls:Tile>
+
+        <Controls:Tile Title="Admin. Contrato" Margin="26,180,431,50" Click="Tile_Click_3" Height="Auto" Width="Auto">
+            <iconPacks:PackIconMaterial Kind="Bank" VerticalAlignment="Center" HorizontalAlignment="Center" Height="65" Width="78" />
+        </Controls:Tile>
+
+        <Controls:Tile Title="Listado Clientes" Margin="188,20,267,210" Click="Tile_Click_1" Height="Auto" Width="Auto">
+            <iconPacks:PackIconMaterial Kind="FormatListBulleted" VerticalAlignment="Center" HorizontalAlignment="Center" Height="65" Width="78" />
+        </Controls:Tile>
+
+        <Controls:Tile Title="Listado Contratos" Margin="188,179,267,51" Click="Tile_Click_2" Height="Auto" Width="Auto">
+            <iconPacks:PackIconMaterial Kind="FormatLineStyle" VerticalAlignment="Center" HorizontalAlignment="Center" Height="65" Width="78" />
+        </Controls:Tile>
+
+        <Controls:Tile Title="Salir" Margin="377,23,99,41" Click="Tile_Click_4" Height="Auto" Width="Auto">
+            <iconPacks:PackIconMaterial Kind="ExitToApp" VerticalAlignment="Center" HorizontalAlignment="Center" Height="65" Width="78" />
+        </Controls:Tile>
+
+     
+    </Grid>
+</Controls:MetroWindow>
